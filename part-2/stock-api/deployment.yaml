@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: stock-api
   labels:
-    app: widgetario
     kubernetes.courselabs.co: hackathon
+    app: widgetario
 spec:
   selector:
     matchLabels:
@@ -23,7 +23,7 @@ spec:
           ports:
             - containerPort: 8080
               name: http
-              # database reference
-              envFrom:
+          # database reference
+          envFrom:
             - secretRef:
-                name: stock-api-secret
+                name: stock-api-connection

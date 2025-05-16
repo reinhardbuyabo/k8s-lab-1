@@ -7,8 +7,8 @@ metadata:
     app: widgetario
 spec:
   ports:
-  - port: 8080
-    targetPort: http
+    - port: 80
+      targetPort: http
   selector:
     app: widgetario
     component: stock-api

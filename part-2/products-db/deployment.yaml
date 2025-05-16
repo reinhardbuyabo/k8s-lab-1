@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: products-db
   labels:
-    app: widgetario
     kubernetes.courselabs.co: hackathon
+    app: widgetario
 spec:
   selector:
     matchLabels:
@@ -23,7 +23,6 @@ spec:
           ports:
             - containerPort: 5432
               name: postgres
-              # password reference
-              envFrom:
+          envFrom:
             - secretRef:
-                name: products-db-secret
+                name: products-db-password

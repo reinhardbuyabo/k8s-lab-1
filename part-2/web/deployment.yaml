@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: web
   labels:
-    app: widgetario
     kubernetes.courselabs.co: hackathon
+    app: widgetario
 spec:
   selector:
     matchLabels:
@@ -23,15 +23,14 @@ spec:
           ports:
             - containerPort: 80
               name: http
-              env:
-                - name: Widgetario__Theme
-                  value: dark
-              volumeMounts:
-                - name: api-config
-                  mountPath: /app/secrets/api.json
-                  subPath: api.json
-              volumes:
-                - name: api-config
-                  secret:
-                    secretName: web-api
-
+          envFrom:
+            - configMapRef:
+                name: web-features
+          volumeMounts:
+            - name: api-config
+              mountPath: "/app/secrets"
+              readOnly: true
+      volumes:
+        - name: api-config
+          secret:
+            secretName: web-api
