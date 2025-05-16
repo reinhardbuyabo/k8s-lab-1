@@ -6,8 +6,12 @@
 - [ ] Can browse to the service port from one's cluster
 
 ## Part 2
-
-## Part 3
-
-## Part 4
+![alt text](part2.1.png)
+## part 3
+![alt text](part3.1.png) 
+![alt text](part3.2.png) 
+## part 4
+![alt text](part4.1.png) 
+![alt text](part4.2.png) 
+![alt text](part4.3.png)
 
